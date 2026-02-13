@@ -26,15 +26,15 @@ For each sample $d$ extract:
 
 Define per-event physics weight:
 
-\[
-w_k = \frac{\sigma_d \, L}{W_{\text{gen},d}} \, w_k^{\text{gen}}
-\]
+
+$w_k = \frac{\sigma_d \, L}{W_{\text{gen},d}} \, w_k^{\text{gen}}$
+
 
 Check:
 
-\[
-\sum_k w_k \approx \sigma_d \, L
-\]
+
+$\sum_k w_k \approx \sigma_d \, L$
+
 
 ---
 
@@ -50,15 +50,13 @@ Implement dilepton selection:
 
 Apply:
 
-\[
-d \cap R
-\]
+
+$d \cap R$
 
 Compute yields:
 
-\[
-N_{d,R} = \sum_{k \in d \cap R} w_k
-\]
+
+$N_{d,R} = \sum_{k \in d \cap R} w_k$
 
 ---
 
@@ -66,11 +64,9 @@ N_{d,R} = \sum_{k \in d \cap R} w_k
 
 Compute non-dileptonic contamination:
 
-\[
-f_{\text{non-}\ell\ell}(B) =
-\frac{\sum_{k \in B_{\text{incl}} \cap R,\ \text{truth}\neq \ell\ell} w_k}
-{\sum_{k \in B_{\text{incl}} \cap R} w_k}
-\]
+
+$f_{\text{non-}\ell\ell}(B) = \frac{\sum_{k \in B_{\text{incl}} \cap R,\ \text{truth}\neq \ell\ell} w_k}{\sum_{k \in B_{\text{incl}} \cap R} w_k}$
+
 
 Same for $S$.
 
@@ -98,15 +94,15 @@ Store dataset:
 
 Training set:
 
-\[
-S_{\ell\ell} \cap R \quad \text{vs} \quad B_{\ell\ell} \cap R
-\]
+
+$S_{\ell\ell} \cap R \quad \text{vs} \quad B_{\ell\ell} \cap R$
+
 
 Validation set:
 
-\[
-S_{\text{incl}} \cap R,\quad B_{\text{incl}} \cap R
-\]
+
+$S_{\text{incl}} \cap R,\quad B_{\text{incl}} \cap R$
+
 
 Check sculpting of $m_{t\bar t}$.
 
@@ -120,13 +116,13 @@ Choose fit variables:
 
 Construct binned templates:
 
-\[
-s_i = \sum_{k \in S_{\text{incl}} \cap R \cap i} w_k
-\]
 
-\[
-b_i = \sum_{k \in B_{\text{incl}} \cap R \cap i} w_k
-\]
+$s_i = \sum_{k \in S_{\text{incl}} \cap R \cap i} w_k$
+
+
+
+$b_i = \sum_{k \in B_{\text{incl}} \cap R \cap i} w_k$
+
 
 ---
 
@@ -134,9 +130,9 @@ b_i = \sum_{k \in B_{\text{incl}} \cap R \cap i} w_k
 
 Likelihood model:
 
-\[
-n_i \sim \text{Pois}(\mu s_i + b_i)
-\]
+
+$n_i \sim \text{Pois}(\mu s_i + b_i)$
+
 
 Extract:
 
@@ -166,13 +162,13 @@ For each event extract:
 
 Compute:
 
-\[
-\hat{s} = (p_1 + p_2)^2
-\]
 
-\[
-x_{1,2} = \frac{\sqrt{\hat{s}}}{\sqrt{s}} e^{\pm y}
-\]
+$\hat{s} = (p_1 + p_2)^2$
+
+
+
+$x_{1,2} = \frac{\sqrt{\hat{s}}}{\sqrt{s}} e^{\pm y}$
+
 
 where $y$ is rapidity of the $t\bar t$ system.
 
@@ -188,13 +184,13 @@ For each event classify:
 
 Compute fractions:
 
-\[
-F_{gg} = \frac{\sum_{k \in gg} w_k}{\sum_k w_k}
-\]
 
-\[
-F_{q\bar q} = \frac{\sum_{k \in q\bar q} w_k}{\sum_k w_k}
-\]
+$F_{gg} = \frac{\sum_{k \in gg} w_k}{\sum_k w_k}$
+
+
+
+$F_{q\bar q} = \frac{\sum_{k \in q\bar q} w_k}{\sum_k w_k}$
+
 
 Compare for:
 
@@ -207,9 +203,9 @@ Compare for:
 
 Plot weighted distributions:
 
-\[
-\frac{d\sigma}{dx_1},\quad \frac{d\sigma}{dx_2}
-\]
+
+$\frac{d\sigma}{dx_1},\quad \frac{d\sigma}{dx_2}$
+
 
 Compare signal vs background.
 
@@ -225,21 +221,21 @@ Look for:
 
 Plot:
 
-\[
-\frac{d\sigma}{d\hat{s}}
-\]
+
+$\frac{d\sigma}{d\hat{s}}$
+
 
 Zoom near:
 
-\[
-\hat{s} \approx (2m_t)^2
-\]
+
+$\hat{s} \approx (2m_t)^2$
+
 
 Check if toponium shows enhancement in:
 
-\[
-E = \sqrt{\hat{s}} - 2m_t
-\]
+
+$E = \sqrt{\hat{s}} - 2m_t$
+
 
 ---
 
@@ -247,17 +243,15 @@ E = \sqrt{\hat{s}} - 2m_t
 
 Using PDFs $f_i(x,Q)$:
 
-\[
-\mathcal{L}_{ij}(\tau) =
-\int dx_1 dx_2\, f_i(x_1,Q)\, f_j(x_2,Q)\,
-\delta(x_1 x_2 - \tau)
-\]
+
+$\mathcal{L}_{ij}(\tau) = \int dx_1 dx_2\, f_i(x_1,Q)\, f_j(x_2,Q)\, \delta(x_1 x_2 - \tau)$
+
 
 with:
 
-\[
-\tau = \frac{\hat{s}}{s}
-\]
+
+$\tau = \frac{\hat{s}}{s}$
+
 
 Study:
 
@@ -272,9 +266,9 @@ Evaluate dominance at threshold.
 
 Repeat channel fractions **after selection**:
 
-\[
-F_{gg}^{(R)},\quad F_{q\bar q}^{(R)}
-\]
+
+$F_{gg}^{(R)},\quad F_{q\bar q}^{(R)}$
+
 
 See how reconstruction biases partonic composition.
 
